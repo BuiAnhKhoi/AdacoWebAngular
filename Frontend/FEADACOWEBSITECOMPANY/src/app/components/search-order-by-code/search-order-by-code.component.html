@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<app-title-page
+  [pageTitle]="'searchOrderByCode.titlePage'|translate"
+  [detailPageTitle]="'searchOrderByCode.detailTitlePage'|translate"
+></app-title-page>
+
+<div class="w-4/5 mx-auto my-5">
+    <div class="flex justify-end items-center mb-5">
+        <p class="mr-3">{{'searchOrderByCode.titleInputCodeOrder'| translate}} : </p>
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmitFormSearch()">
+            <input type="text" class="input input-bordered bg-white text-black" formControlName="codeOrder">
+            <input type="submit" [value]="'searchOrderByCode.titleFindBtn'|translate" class="btn btn-error ml-5 text-white">
+        </form>
+    </div>
+    <div *ngIf="arrInformationOrder.length == 1">
+        <h1>{{'searchOrderByCode.titleFound'|translate}} {{arrInformationOrder.length}} order with code order is : {{arrInformationOrder[0]['code']}}</h1>
+        <div class="w-full stats shadow">
+            <div class="stat place-items-center">
+                <div class="stat-title">{{'searchOrderByCode.titleDateCreate'|translate}}</div>
+                <div class="stat-value text-xl">{{arrInformationOrder[0]['date_create'] | date:'dd/MM/yyyy'}}</div>
+            </div>
+            <div class="stat place-items-center">
+                <div class="stat-title">{{'searchOrderByCode.titleShippingFee'| translate}}</div>
+                <div class="stat-value text-xl">{{arrInformationOrder[0]['shipping_fee'] | number : '1.0-0'}} vnđ</div>
+            </div>
+            <div class="stat place-items-center">
+                <div class="stat-title">{{'searchOrderByCode.titleTotalPriceProduct'| translate}}</div>
+                <div class="stat-value text-xl">{{arrInformationOrder[0]['total_price_product'] | number : '1.0-0'}} vnđ</div>
+            </div>
+            <div class="stat place-items-center">
+                <div class="stat-title">{{'searchOrderByCode.titleTotalCost' | translate}}</div>
+                <div class="stat-value text-xl">{{arrInformationOrder[0]['total_cost'] | number : '1.0-0'}} vnđ</div>
+            </div>
+            <div class="stat place-items-center">
+                <div class="stat-title">{{'searchOrderByCode.titleStatus' | translate}}</div>
+                <div class="stat-value text-xl">{{arrInformationOrder[0]['status']}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="errSearchStr != '' ">
+        <p>{{'searchOrderByCode.titleHaveErrorSearch' | translate}}</p>
+    </div>
+    <div *ngIf="notFoundOrderSearchStr != ''">
+        <p>{{'searchOrderByCode.titleNotFoundAnyOrder' | translate}}</p>
+    </div>
+</div>
+
+<app-footer></app-footer>

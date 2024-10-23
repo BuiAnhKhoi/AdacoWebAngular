@@ -1,0 +1,107 @@
+<app-header></app-header>
+<app-title-page
+  [pageTitle]="'register.titlePage'| translate"
+  [detailPageTitle]="'register.detailTitlePage'|translate"
+></app-title-page>
+
+<div class="w-full my-10 dark:bg-black">
+  <div class="w-4/5 mx-auto">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+      <h1 class="text-black text-4xl mb-5 font-semibold dark:text-white">{{'register.titleRegister' | translate}}</h1>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleUsername' | translate}}</p>
+        <input
+          type="text"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="usernameRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titlePassword' | translate}}</p>
+        <input
+          type="password"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="passwordRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titlePasswordAgain' | translate}}</p>
+        <input
+          type="password"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="confirmPasswordRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleFirstName' | translate}}</p>
+        <input
+          type="text"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="firstNameRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleLastName' | translate}}</p>
+        <input
+          type="text"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="lastNameRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleGmail' | translate}}</p>
+        <input
+          type="text"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="gmailRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleTelephoneNumber' | translate}}</p>
+        <input
+          type="tel"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="telRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3">
+        <p class="dark:text-white">{{'register.titleDOB' | translate}}</p>
+        <input
+          type="date"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="dobRegister"
+        />
+      </div>
+      <div class="w-full lg:w-1/2 mb-3 flex justify-between items-center flex-col lg:flex-row">
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            class="mr-2 checkbox dark:border-white"
+            formControlName="agreeTermService"
+          />
+          <span class="dark:text-white"
+            >{{'register.titleWeAccept' | translate}}
+            <a href="#" class="text-blue-500 underline"
+              >{{'register.titleTermsAndCondition'| translate}}</a
+            ></span
+          >
+        </div>
+        <div>
+          <input type="submit" class="btn btn-error text-white dark:bg-orange-500" [value]="'register.titleRegisterBtn'|translate" >
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="notificationSuccessRegister == true">
+    <div class="toast toast-top toast-center">
+        <div class="alert alert-success">
+            <button (click)="notificationSuccessRegister = false">X</button>
+            <span class="text-white">Register Successful, your account is : {{usernameRegisterSuccessful}}.</span>
+            <a class="text-white" routerLink="/login">Login page</a>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

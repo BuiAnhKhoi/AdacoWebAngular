@@ -1,0 +1,101 @@
+<app-header></app-header>
+<app-title-page
+  [pageTitle]="'products.titlePage' | translate"
+  [detailPageTitle]="'products.detailTitlePage' | translate"
+></app-title-page>
+
+<div class="w-full dark:bg-black">
+  <div class="w-4/5 mx-auto py-5 flex flex-col lg:justify-between lg:flex-row">
+    <div class="w-full mb-5 lg:w-3/12 lg:mb-0">
+      <p class="text-black mb-2 text-xl dark:text-white">{{'products.titleFilter'|translate}}</p>
+      <div class="flex flex-col items-start mb-5">
+        <p class="dark:text-white">{{ 'products.titleFilter01' | translate}}</p>
+        <p class="dark:text-white">{{ 'products.titleFilter02' | translate}}</p>
+        <p class="dark:text-white">{{ 'products.titleFilter03' | translate}}</p>
+      </div>
+      <div class="flex flex-col w-full">
+        <div class="w-full flex justify-between">
+            <p class="dark:text-white">{{'products.titleFromCostFilter' | translate}}</p>
+            <p class="dark:text-white">{{minimumPriceRange | number : '1.0-0'}} vnđ</p>
+            <p class="dark:text-white">{{'products.titleToCostFilter' | translate}}</p>
+            <p class="dark:text-white">{{valuePriceRange | number:'1.0-0'}} vnđ</p>
+        </div>
+        <input
+        type="range"
+        min="0"
+        max="10000000"
+        [value]="valuePriceRange"
+        class="range range-xs"
+        (change)="changeRangePrice($event)"
+      />
+      </div>
+    </div>
+    <div class="w-full flex flex-col lg:w-8/12 lg:flex-col">
+      <div class="flex justify-between">
+        <p class="dark:text-white">{{'products.titleShow' | translate}} {{totalProductPerPage}} {{'products.titleProduct' | translate}}</p>
+        <div class="dropdown dropdown-bottom dropdown-end">
+          <div tabindex="0" role="button" class="btn m-1 bg-white dark:bg-white dark:text-black">{{'products.titleFilterBtn' | translate}}</div>
+          <ul
+            tabindex="0"
+            class="dropdown-content z-[1] menu p-2 shadow bg-white rounded-box w-52"
+          >
+            <li><button (click)="changeFilterString('default')" class="dark:bg-gray">{{'products.titleFilter01Btn' | translate}}</button></li>
+            <li><button (click)="changeFilterString('price-lth')">{{'products.titleFilter02Btn' | translate}}</button></li>
+            <li><button (click)="changeFilterString('price-htl')">{{'products.titleFilter03Btn' | translate}}</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-4">
+        <div
+          class="card mb-5 bg-[#F9F9F9] shadow-xl"
+          *ngFor="let each_product of showAllProducts"
+        >
+          <figure class="h-[200px]">
+            <img
+              src="{{ each_product.img_main }}"
+              alt=""
+              class="rounded-xl h-full p-5"
+            />
+          </figure>
+          <div class="card-body">
+            <a
+              [routerLink]="['/detail-product', each_product.id]"
+              class="w-full no-underline text-center text-black whitespace-nowrap text-ellipsis"
+              >{{ each_product.name }}</a
+            >
+            <p class="text-center">
+              {{ each_product.price | number : "1.0-0" }} vnđ
+            </p>
+          </div>
+          <div class="card-actions flex justify-around mb-3">
+            <button class="btn btn-primary text-white hover:bg-slate-700" (click)="addOneProductToCart(each_product.id, each_product.price)">
+              {{'products.titleAddToCartBtn' | translate}}
+            </button>
+            <button
+              class="btn text-white bg-orange-500 hover:bg-orange-700 border-none"
+              (click)="buyNow(each_product.id, 1)"
+            >
+              {{'products.titleBuyNowBtn' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="join">
+        <button
+          [ngClass]="{
+            'join-item': true,
+            'btn hover:text-white': true,
+            'bg-orange-500 text-white hover:bg-orange-700':
+              each_num == currentPageInt ? true : false
+          }"
+          *ngFor="let each_num of listNumPagination"
+          (click)="changeNumPagination(each_num)"
+        >
+          {{ each_num }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

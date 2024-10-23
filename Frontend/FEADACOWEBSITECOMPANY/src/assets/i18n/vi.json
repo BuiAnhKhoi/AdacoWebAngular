@@ -1,0 +1,185 @@
+{
+    "general": {
+
+    },
+    "header" : {
+        "homeTitleBtn" : "TRANG CHỦ",
+        "productsTitleBtn": "SẢN PHẨM",
+        "contactTitleBtn": "LIÊN HỆ",
+        "registerTitleBtn": "ĐĂNG KÝ",
+        "loginTitleBtn":"ĐĂNG NHẬP"
+    },
+    "homepage": {
+        "title01Part02":"Hãy để",
+        "title02Part02":"các sản phẩm của chúng tôi",
+        "title03Part02":"giúp đỡ cuộc sống",
+        "title04Part02":"của bạn",
+        "title01Part03":"Các sản phẩm tốt nhất",
+        "detail01Part02":"Sản phẩm tốt cho người dùng",
+        "detail02Part02":"Rẻ & Đẹp & Nhanh",
+        "detail03Part02":"Đặt hàng ngay. Chúng tôi sẽ có mã giảm cho các bạn",
+        "detail01Part03":"Lập trình viên",
+        "detail02Part03":"Thiết kế",
+        "detail03Part03":"Bảo mật",
+        "detail04Part03":"Người đã mua hàng"
+    },
+    "products":{
+        "titlePage":"Danh sách sản phẩm",
+        "detailTitlePage":"Mua ngay kẻo lỡ",
+        "titleFilter":"LOẠI",
+        "titleFilter01":"Tất cả",
+        "titleFilter02":"Cái",
+        "titleFilter03":"Tấm",
+        "titleFromCostFilter":"Từ",
+        "titleToCostFilter":"Đến",
+        "titleShow":"Có",
+        "titleProduct":"sản phẩm",
+        "titleFilterBtn":"Bộ lọc",
+        "titleFilter01Btn":"Mặc định",
+        "titleFilter02Btn":"Gía tiền từ thấp - cao",
+        "titleFilter03Btn" : "Giá tiền từ cao - thấp",
+        "titleAddToCartBtn" :"Thêm sản phẩm",
+        "titleBuyNowBtn":"Mua ngay"
+    },
+    "contact": {
+        "title01Part01":"Đừng lo lắng !",
+        "title02Part01": "Nếu có bất kỳ câu hỏi nào ? Hãy gửi câu hỏi đến chúng tôi",
+        "title01Part02": "Hãy liên hệ chúng tôi !",
+        "titleUsername":"Họ và tên",
+        "titleTelephoneNumber":"Số điện thoại",
+        "titleGmail":"Gmail",
+        "titleContent":"Nội dung",
+        "titleSendContactBtn": "GỬI"
+    },
+    "register" : {
+        "titlePage":"Tạo toài khoản mới",
+        "detailTitlePage":"Hãy tạo toài khoản mới để xem thêm nhiều nội dung hơn",
+        "titleRegister" :"Đăng ký",
+        "titleUsername":"Họ và tên",
+        "titlePassword":"Mật khẩu",
+        "titlePasswordAgain":"Mật khẩu lần 2",
+        "titleFirstName":"Tên",
+        "titleLastName":"Họ",
+        "titleGmail":"Gmail",
+        "titleTelephoneNumber":"Số điện thoại",
+        "titleDOB":"Ngày tháng năm sinh",
+        "titleWeAccept":"Chúng tôi đồng ý",
+        "titleTermsAndCondition":"điều khoản sử dụng",
+        "titleRegisterBtn":"Đăng ký"
+    },
+    "login":{
+        "titlePage":"Toài khoản của tôi",
+        "detailTitlePage":"Đăng nhập toài khoản nào để truy cập nhiều nội dung hơn",
+        "titleLogin":"Đăng nhập",
+        "titleUsername":"Tên đăng nhập hoặc gmail",
+        "titlePassword":"Mật khẩu",
+        "titleRememberMe":"Ghi nhớ tôi",
+        "titleLostMyPassword":"Quên mật khẩu"
+    },
+    "footer":{
+        "titleCustomerService":"DỊCH VỤ KHÁCH HÀNG",
+        "titleHelpContactUs":"Giúp đỡ & Liên hệ",
+        "titleReturnRefunds":"Trả hàng & Hoàn tiền",
+        "titleOnlineStore":"Cửa hàng trực tuyến",
+        "titleTermCondition":"Điều khoản & Điều kiện",
+        "titleCompany":"CÔNG TY",
+        "titleAboutUs":"Về chúng tôi",
+        "titleBlog":"Blog",
+        "titleOrderTracking":"Theo dõi đơn hàng",
+        "titleFAQPage":"Trang FAQ",
+        "titleContactUs":"Liên hệ",
+        "titleLogin":"Đăng nhập",
+        "titleSocialMedia":"MẠNG XÃ HỘI",
+        "titleArchive":"LƯU TRỮ",
+        "titleDesigner":"Nhà thiết kế",
+        "titleGallery":"Thư viện ảnh",
+        "titlePricing":"Giá cả",
+        "titleHelpSupport":"Giúp đỡ & Hỗ trợ"
+    },
+    "cart":{
+        "titleNotFoundAnyProduct":"Không tìm thấy sản phẩm nào. Đến trang sản phẩm để mua sản phẩm. Cảm ơn",
+        "titleName":"Tên",
+        "titlePrice":"Gía",
+        "titleTotalCostProduct":"Tổng tiền hàng",
+        "titleQuantity":"Số lượng",
+        "titleDeleteBtn":"Xóa",
+        "titleAddress":"Địa chỉ",
+        "titleChooseProvinceOrCity":"Chọn tỉnh/thành phố",
+        "titleChooseDistrict":"Chọn huyện",
+        "titleChooseWard":"Chọn phường",
+        "titleInformation":"Thông tin",
+        "titleFullName":"Họ và tên",
+        "titleTelephoneNumber":"Số điện thoại",
+        "titleNote":"Lưu ý",
+        "titleShippingFee":"Phí giao hàng",
+        "titleTotalCost":"Tổng cộng",
+        "titleTotal":"Tổng kết",
+        "titleOrder":"Đặt hàng"
+    },
+    "UserInformation":{
+        "titleFirstName":"Tên",
+        "titleLastName":"Họ",
+        "titleTelephoneNumber":"Số điện thoại",
+        "titleLastLogin":"Lần cuối đăng nhập",
+        "titleDOB":"NTNS",
+        "titleChangeAvatar":"Thay hình nền",
+        "titleUsername":"Tên đăng nhập",
+        "titleGmail":"Gmail"
+    },
+    "searchOrderByCode":{
+        "titlePage":"Tìm kiếm đơn hàng",
+        "detailTitlePage":"Tìm đơn hàng bằng mã đơn hàng",
+        "titleInputCodeOrder":"Nhập mã đơn hàng",
+        "titleFindBtn":"Tìm",
+        "titleFound":"Tìm",
+        "titleFound2":"đơn hàng với mã đơn hàng",
+        "titleDateCreate":"Ngày tạo",
+        "titleShippingFee":"Phí giao hàng",
+        "titleTotalPriceProduct":"Tổng tiền hàng",
+        "titleTotalCost":"Tổng cộng",
+        "titleStatus":"Trạng thái",
+        "titleHaveErrorSearch":"Có lỗi. Có thể sai chuẩn mã đơn hàng. Liên hệ quản trị viên để được hỗ trợ",
+        "titleNotFoundAnyOrder":"Không tìm thấy bất kỳ đơn hàng nào với mã "
+    },
+    "orderStatus":{
+        "titleID":"STT",
+        "titleCode":"Mã đơn hàng",
+        "titleDateCreate":"Ngày tạo",
+        "titleTotalCost":"Tổng tiền",
+        "titleShippingFee":"Tiền giao hàng"
+    },
+    "orderPending":{
+        "titlePage":"Đơn hàng đang chờ xử lý",
+        "detailTitlePage":"Tất cả đơn hàng đang chờ xử lý"
+    },
+    "orderNeedDelivery":{
+        "titlePage":"Đơn hàng đang cần giao",
+        "detailTitlePage":"Tất cả đơn hàng đang cần giao"
+    },
+    "orderDelivery":{
+        "titlePage":"Đơn hàng đang giao",
+        "detailTitlePage":"Tất cả đơn hàng đang giao"
+    },
+    "orderSuccess":{
+        "titlePage":"Đơn hàng giao thành công",
+        "detailTitlePage":"Tất cả đơn hàng đã giao thành công"
+    },
+    "orderReturn":{
+        "titlePage":"Đơn hàng trả về",
+        "detailTitlePage":"Tất cả đơn hàng đã trả về"
+    },
+    "orderCancel":{
+        "titlePage":"Đơn hàng bị hủy",
+        "detailTitlePage":"Tất cả đơn hàng bị hủy"
+    },
+    "orderHistory":{
+        "titlePage":"Lịch sử đơn hàng",
+        "detailTitlePage":"Hiển thi hết tất cả đơn hàng",
+        "titleFilter":"Bộ lọc",
+        "titleDefault":"Mặc định",
+        "titleTotalCostHighLow":"Giá tiền từ cao đến thấp",
+        "titleTotalCostLowHigh":"Giá tiền từ thấp đến cao",
+        "titleFilterNewest":"Mới nhất ( ngày tạo đơn hàng )",
+        "titleFilterOldest":"Cũ nhất ( ngày tạo đơn hàng )"
+    }
+}

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-title-page
+  [pageTitle]="'login.titlePage' | translate"
+  [detailPageTitle]="'login.detailTitlePage' | translate"
+></app-title-page>
+
+<div class="w-full my-10 dark:bg-black">
+  <div class="w-4/5 mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+      <h1 class="text-black text-4xl mb-5 font-semibold dark:text-white">{{ 'login.titleLogin' | translate}}</h1>
+      <div class="w-full sm:w-1/2 mb-3">
+        <p class="dark:text-white">{{'login.titleUsername' | translate}} *</p>
+        <input
+          type="text"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="usernameLogin"
+        />
+      </div>
+      <div class="w-full sm:w-1/2 mb-2">
+        <p class="dark:text-white">{{'login.titlePassword'| translate}} *</p>
+        <input
+          type="password"
+          class="bg-white border-black border p-2 rounded w-full"
+          formControlName="passwordLogin"
+        />
+      </div>
+      <div class="w-full sm:w-1/2 flex justify-between items-center">
+        <div class="flex items-center">
+          <input type="checkbox" class="checkbox mr-2 dark:border-white" />
+          <span class="dark:text-white">{{'login.titleRememberMe' | translate}}</span>
+        </div>
+        <div>
+          <input
+            type="submit"
+            [value]="'login.titleLogin' |translate"
+            class="btn bg-red-600 border-none text-white dark:bg-orange-500"
+          />
+        </div>
+      </div>
+      <div>
+        <p class="dark:text-white">{{'login.titleLostMyPassword' | translate}}</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

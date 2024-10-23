@@ -1,0 +1,185 @@
+{
+    "general": {
+
+    },
+    "header" : {
+        "homeTitleBtn" : "HOME",
+        "productsTitleBtn": "PRODUCTS",
+        "contactTitleBtn": "CONTACT",
+        "registerTitleBtn": "Register",
+        "loginTitleBtn":"Login"
+    },
+    "homepage": {
+        "title01Part02":"Let my",
+        "title02Part02":"product",
+        "title03Part02":"help your",
+        "title04Part02":"life",
+        "title01Part03":"Best Products",
+        "detail01Part02":"Best product for you",
+        "detail02Part02":"Cheap & Beautiful & Fast",
+        "detail03Part02":"Order right now. We have discount for you",
+        "detail01Part03":"Coder",
+        "detail02Part03":"Designer",
+        "detail03Part03":"Hacker",
+        "detail04Part03":"Buyer"
+    },
+    "products":{
+        "titlePage":"Product List",
+        "detailTitlePage":"Buy now for get more discount",
+        "titleFilter":"TYPES",
+        "titleFilter01":"All",
+        "titleFilter02":"Cái",
+        "titleFilter03":"Tấm",
+        "titleFromCostFilter":"From",
+        "titleToCostFilter":"To",
+        "titleShow":"Show",
+        "titleProduct":"products",
+        "titleFilterBtn":"Filter",
+        "titleFilter01Btn":"Default",
+        "titleFilter02Btn":"Price low - high",
+        "titleFilter03Btn" : "Price high - low",
+        "titleAddToCartBtn" :"Add to cart",
+        "titleBuyNowBtn": "Buy now"
+    },
+    "contact": {
+        "title01Part01":"Don't be shy !",
+        "title02Part01": "If have any question ? send contact to us",
+        "title01Part02": "Contact with us !",
+        "titleUsername":"Username",
+        "titleTelephoneNumber":"Telephone Number",
+        "titleGmail":"Gmail",
+        "titleContent":"Content",
+        "titleSendContactBtn": "SEND CONTACT"
+    },
+    "register" :{
+        "titlePage":"Create New Account",
+        "detailTitlePage":"Create new account for access more content",
+        "titleRegister" :"Register",
+        "titleUsername":"Username",
+        "titlePassword":"Password",
+        "titlePasswordAgain":"Password Again",
+        "titleFirstName":"First Name",
+        "titleLastName":"Last Name",
+        "titleGmail":"Gmail",
+        "titleTelephoneNumber":"Telephone Number",
+        "titleDOB":"Date Of Birth",
+        "titleWeAccept":"We accept",
+        "titleTermsAndCondition":"Terms and conditions",
+        "titleRegisterBtn":"Register"
+    },
+    "login":{
+        "titlePage":"My Account",
+        "detailTitlePage":"Login your account for access more content",
+        "titleLogin":"Login",
+        "titleUsername":"Username or email address",
+        "titlePassword":"Password",
+        "titleRememberMe":"Remember me",
+        "titleLostMyPassword":"Lost my password"
+    },
+    "footer":{
+        "titleCustomerService":"CUSTOMER SERVICE",
+        "titleHelpContactUs":"Help & Contact Us",
+        "titleReturnRefunds":"Returns & Refunds",
+        "titleOnlineStore":"Online Store",
+        "titleTermCondition":"Terms & Condition",
+        "titleCompany":"COMPANY",
+        "titleAboutUs":"About Us",
+        "titleBlog":"Blog",
+        "titleOrderTracking":"Order Tracking",
+        "titleFAQPage":"FAQ Page",
+        "titleContactUs":"Contact Us",
+        "titleLogin":"Login",
+        "titleSocialMedia":"SOCIAL MEDIA",
+        "titleArchive":"ARCHIVE",
+        "titleDesigner":"Designer",
+        "titleGallery":"Gallery",
+        "titlePricing":"Pricing",
+        "titleHelpSupport":"Help & Support"
+    },
+    "cart":{
+        "titleNotFoundAnyProduct":"Not found any product in cart. Go to page products for add more product. Thank you",
+        "titleName":"Name",
+        "titlePrice":"Price",
+        "titleTotalCostProduct":"Total cost product",
+        "titleQuantity":"Quantity",
+        "titleDeleteBtn":"Delete",
+        "titleAddress":"Address",
+        "titleChooseProvinceOrCity":"Choose Province/City",
+        "titleChooseDistrict":"Choose District",
+        "titleChooseWard":"Choose Ward",
+        "titleInformation":"Information",
+        "titleFullName":"Full Name",
+        "titleTelephoneNumber":"Telephone Number",
+        "titleNote":"Note",
+        "titleShippingFee":"Shipping Fee",
+        "titleTotalCost":"Total cost",
+        "titleTotal":"Total",
+        "titleOrder":"Order"
+    },
+    "UserInformation":{
+        "titleFirstName":"First Name",
+        "titleLastName":"Last Name",
+        "titleTelephoneNumber":"Telephone Number",
+        "titleLastLogin":"Last Login",
+        "titleDOB":"DOB",
+        "titleChangeAvatar":"Change Avatar",
+        "titleUsername":"Username",
+        "titleGmail":"Gmail"
+    },
+    "searchOrderByCode":{
+        "titlePage":"Search detail order",
+        "detailTitlePage":"Search order by code",
+        "titleInputCodeOrder":"Input code order",
+        "titleFindBtn":"Find",
+        "titleFound":"Found",
+        "titleFound2":"order with code order is",
+        "titleDateCreate":"Date Create",
+        "titleShippingFee":"Shipping Fee",
+        "titleTotalPriceProduct":"Total Price Product",
+        "titleTotalCost":"Total Cost",
+        "titleStatus":"Status",
+        "titleHaveErrorSearch":"Have error when trying search order. Maybe wrong format code order.Please contact admin for more information",
+        "titleNotFoundAnyOrder":"Not found any order with code"
+    },
+    "orderStatus":{
+        "titleID":"ID",
+        "titleCode":"Code",
+        "titleDateCreate":"Date Create",
+        "titleTotalCost":"Total cost",
+        "titleShippingFee":"Shipping Fee"
+    },
+    "orderPending":{
+        "titlePage":"Order Pending",
+        "detailTitlePage":"All order with status pending"
+    },
+    "orderNeedDelivery":{
+        "titlePage":"Order Need Delivery",
+        "detailTitlePage":"All order with status need delivery"
+    },
+    "orderDelivery":{
+        "titlePage":"Order Delivery",
+        "detailTitlePage":"All order with status delivery"
+    },
+    "orderSuccess":{
+        "titlePage":"Order Success",
+        "detailTitlePage":"All order with status success"
+    },
+    "orderReturn":{
+        "titlePage":"Order Return",
+        "detailTitlePage":"All order with status return"
+    },
+    "orderCancel":{
+        "titlePage":"Order Cancel",
+        "detailTitlePage":"All order with status cancel"
+    },
+    "orderHistory":{
+        "titlePage":"Order History",
+        "detailTitlePage":"Show all order with filter",
+        "titleFilter":"Filter",
+        "titleDefault":"Default",
+        "titleTotalCostHighLow":"Total cost high to low",
+        "titleTotalCostLowHigh":"Total cost low to high",
+        "titleFilterNewest":"Newest ( date create )",
+        "titleFilterOldest":"Oldest ( date create )"
+    }
+}

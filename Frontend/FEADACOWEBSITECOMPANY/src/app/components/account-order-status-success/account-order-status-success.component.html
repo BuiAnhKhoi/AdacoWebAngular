@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<app-title-page
+  [pageTitle]="'orderSuccess.titlePage'"
+  [detailPageTitle]="'orderSuccess.detailTitlePage'"
+></app-title-page>
+
+<div class="w-full dark:bg-gray-400">
+    <div class="w-4/5 mx-auto my-5 flex flex-col">
+        <div *ngIf="arrOrderStatus.length > 0">
+            <div class="w-full overflow-x-auto">
+                <table class="table">
+                    <thead>
+                        <tr class="w-full">
+                            <th class="text-black text-center w-1/12 dark:text-white">{{'orderStatus.titleID' | translate}}</th>
+                            <th class="text-black text-center w-2/12 dark:text-white">{{'orderStatus.titleCode' | translate}}</th>
+                            <th class="text-black text-center w-3/12 dark:text-white">{{'orderStatus.titleDateCreate' | translate}}</th>
+                            <th class="text-black text-center w-3/12 dark:text-white">{{'orderStatus.titleTotalCost' | translate}}</th>
+                            <th class="text-black text-center w-3/12 dark:text-white">{{'orderStatus.titleShippingFee' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let each_order of arrOrderStatus; let current_index = index">
+                            <td class="text-black text-center dark:text-white">{{current_index + 1}}</td>
+                            <td class="text-black text-center dark:text-white">{{each_order.code}}</td>
+                            <td class="text-black text-center dark:text-white">{{each_order.date_create | date :'dd/MM/yyyy'}}</td>
+                            <td class="text-black text-center dark:text-white">{{each_order.total_cost | number  : '1.0-0'}} vnđ</td>
+                            <td class="text-black text-center dark:text-white">{{each_order.shipping_fee | number : '1.0-0'}} vnđ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="join my-5">
+                <button type="button" (click)="changePagination(each_pagination)" *ngFor="let each_pagination of listNumPagination" [ngClass]="{
+                    'join-item' : true,
+                    'btn text-white': true,
+                    'bg-black': true,
+                    'bg-orange-600' : each_pagination == currentPage ? true : false
+                }">{{each_pagination}}</button>
+            </div>
+        </div>
+        <div *ngIf="arrOrderStatus.length == 0">
+            <p>Not found any order</p>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

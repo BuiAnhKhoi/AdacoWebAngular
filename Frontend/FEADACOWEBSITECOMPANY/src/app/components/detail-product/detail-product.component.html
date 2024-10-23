@@ -1,0 +1,41 @@
+<app-header></app-header>
+<app-title-page
+  [pageTitle]="titleDetailProduct"
+  [detailPageTitle]="'Detail Product'"
+></app-title-page>
+
+<div class="w-full dark:bg-black">
+  <div class="w-4/5 mx-auto my-5 lg:flex lg:justify-between">
+    <div class="w-full lg:w-5/12 flex justify-between">
+      <div class="w-1/5">
+        <img src="{{each_img.image}}" alt="img_product" *ngFor="let each_img of arrInfoProduct[0].images" class="mb-2 bg-[#F9F9F9] rounded-xl p-2 cursor-pointer dark:bg-black dark:boder-white dark:border">
+      </div>
+      <div class="w-3/5 bg-[#F9F9F9] rounded-xl p-2 dark:bg-black">
+        <img src="{{ arrInfoProduct[0].img_main }}" alt="img_product">
+      </div>
+    </div>
+    <div class="w-full lg:w-5/12">
+      <h1 class="text-3xl font-bold dark:text-white">{{arrInfoProduct[0].name}}</h1>
+      <i class="text-[#B9B9B9] dark:text-white">{{arrInfoProduct[0].price | number : "1.0-0"}} vnđ / 1 {{arrInfoProduct[0].types}}</i>
+      <p class="my-10 dark:text-white">{{arrInfoProduct[0].description}}</p>
+      <div class="flex flex-col items-center xs:flex-row xs:justify-between mb-5">
+        <div>
+          <p class="dark:text-white">Quantity</p>
+          <button (click)="minusQuantity()" class="px-2 border rounded-l-sm bg-gray-300 border-r-0 text-white">-</button>
+          <input #inputQuantity (change)="changeQuantityProduct($event)" type="number" class="px-2 border w-16 focus:outline-0" value = "{{currentQuantity}}">
+          <button (click)="plusQuantity()" class="px-2 border rounded-r-sm bg-gray-300 border-l-0 text-white">+</button>
+        </div>
+        <div class="flex flex-col items-center xs:items-end">
+          <p class="dark:text-white">Total cost product</p>
+          <i class="text-[#B9B9B9] dark:text-white">{{arrInfoProduct[0].price * currentQuantity | number : '1.0-0'}} vnđ</i>
+        </div>
+      </div>
+      <div class="flex justify-between">
+        <button type="button" class="btn btn-primary dark:text-white dark:bg-blue-3000" (click)="buyNow(arrInfoProduct[0].id, currentQuantity)">Buy Now</button>
+        <button type="button" class="btn btn-error text-white dark:bg-orange-500" (click)="addProductToCart()">Add Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

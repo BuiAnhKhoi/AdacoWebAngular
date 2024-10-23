@@ -1,0 +1,155 @@
+<app-header></app-header>
+
+<div class="w-full dark:bg-black">
+    <div class="w-4/5 mx-auto my-5">
+        <div *ngIf="arrProductInCart.length > 0">
+            <!-- <div class="overflow-x-auto">
+                <table class="table dark:table-zebra">
+                    <thead>
+                        <tr class="w-full">
+                            <th class="w-1/12">
+                                <label>
+                                    <input type="checkbox" class="checkbox outline dark:outline-white">
+                                </label>
+                            </th>
+                            <th class="text-black w-2/12 dark:text-white">Image</th>
+                            <th class="text-black w-2/12 dark:text-white">Name</th>
+                            <th class="text-black w-2/12 dark:text-white">Price</th>
+                            <th class="text-black w-2/12 dark:text-white">Quantity</th>
+                            <th class="text-black w-2/12 dark:text-white">Total Price </th>
+                            <th class="text-black w-1/12 dark:text-white">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let each_product_in_cart of arrProductInCart">
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox outline dark:outline-white">
+                                </label>
+                            </th>
+                            <th>
+                                <img src="{{each_product_in_cart.id_product.img_main}}" alt="img_product"> 
+                            </th>
+                            <th>
+                                <p class="text-black dark:text-white">{{each_product_in_cart.id_product.name}}</p>
+                            </th>
+                            <th>
+                                <p class="text-black dark:text-white">{{each_product_in_cart.price | number : '1.0-0'}} vnđ</p>
+                            </th>
+                            <th>
+                                <button type="button" class="border p-2 border-r-0 rounded-l dark:text-white" (click)="minusQuantity(each_product_in_cart.id_product.id, each_product_in_cart.quantity)">-</button>
+                                <input id="input__quantity__{{each_product_in_cart.id_product.id}}" (blur)="inputQuantity(each_product_in_cart.id_product.id)" type="number" class="w-16 bg-white border focus:border-none p-2 text-black" value="{{each_product_in_cart.quantity}}">
+                                <button type="button" class="border p-2 border-l-0 rounded-r dark:text-white" (click)="addQuantity(each_product_in_cart.id_product.id)">+</button>
+                            </th>
+                            <th>
+                                <p class="text-black">{{each_product_in_cart.price * each_product_in_cart.quantity | number : '1.0-0'}} vnđ</p>
+                            </th>
+                            <th>
+                                <button (click)="checkConfirmDeleteProduct(each_product_in_cart.id_product.id)" type="button" class="btn btn-error text-white dark:bg-orange-500">Delete</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+        
+            <div *ngFor="let each_product_in_cart of arrProductInCart; let i = index" class="p-2 bg-[#F6F6F8] rounded mb-2 flex flex-col lg:flex-row lg:justify-between dark:bg-black dark:border-white dark:border">
+                <i class="text-black w-full lg:w-1/5 dark:text-white">#{{i+1}}</i>
+                <div class="flex flex-col w-full items-center lg:w-2/5">
+                    <div class="flex w-[100px] lg:w-[150px] mb-2"> 
+                        <img src="{{each_product_in_cart.id_product.img_main}}" alt="img_product">   
+                    </div>
+                    <div class="flex w-full justify-between">
+                        <p>{{'cart.titleName'|translate}} :</p>
+                        <p>{{each_product_in_cart.id_product.name}}</p>
+                    </div>
+                    <div class="flex w-full justify-between">
+                        <p>{{'cart.titlePrice' | translate}} :</p>
+                        <p>{{each_product_in_cart.price | number : '1.0-0'}} vnđ</p>
+                    </div>
+                    <div class="flex w-full justify-between">
+                        <p>{{'cart.titleTotalCostProduct' | translate}} :</p>
+                        <p>{{each_product_in_cart.price * each_product_in_cart.quantity | number : '1.0-0'}} vnđ</p>
+                    </div>
+                </div>
+                <div class="lg:w-1/5 w-full flex flex-col items-center justify-center">
+                    <p class="text-black">{{'cart.titleQuantity' | translate}}</p>
+                    <div>
+                        <button type="button" class="border text-black p-2 border-r-0 rounded-l dark:text-white" (click)="minusQuantity(each_product_in_cart.id_product.id, each_product_in_cart.quantity)">-</button>
+                        <input id="input__quantity__{{each_product_in_cart.id_product.id}}" (blur)="inputQuantity(each_product_in_cart.id_product.id)" type="number" class="w-16 bg-white border focus:border-none p-2 text-black" value="{{each_product_in_cart.quantity}}">
+                        <button type="button" class="border text-black p-2 border-l-0 rounded-r dark:text-white" (click)="addQuantity(each_product_in_cart.id_product.id)">+</button>
+                    </div>
+                    <div class="divider"></div>
+                    <div>
+                        <button (click)="checkConfirmDeleteProduct(each_product_in_cart.id_product.id)" type="button" class="btn btn-error text-white dark:bg-orange-500">{{'cart.titleDeleteBtn'| translate}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider divider-info my-5"></div>
+        
+            <form [formGroup]="cartForm" (ngSubmit)="onSubmitCart()">
+                <div>
+                    <h1 class="text-black text-2xl dark:text-white">{{'cart.titleAddress' | translate}} :</h1>
+                    <div class="flex flex-col w-full lg:justify-between lg:flex-row">
+                        <div class="w-full mb-2 lg:w-1/4 lg:mb-0">
+                            <select class="select select-bordered w-full bg-white" (change)="loadDistrict($event)">
+                                <option disabled selected>{{'cart.titleChooseProvinceOrCity' |translate}}</option>
+                                <option value="{{each_province.division_province}}" *ngFor="let each_province of lstProvince">{{each_province.division_province}}</option>
+                            </select>
+                        </div>
+                        <div class="w-full mb-2 lg:w-1/4 lg:mb-0">
+                            <select class="select select-bordered w-full bg-white" (change)="loadWard($event)">
+                                <option disabled selected>{{'cart.titleChooseDistrict'|translate}}</option>
+                                <option value="{{each_district.district}}" *ngFor="let each_district of lstDistrict">{{each_district.district}}</option>
+                            </select>
+                        </div>
+                        <div class="w-full lg:w-1/4">
+                            <select class="select select-bordered w-full bg-white" (change)="chooseWard($event)">
+                                <option disabled selected>{{'cart.titleChooseWard' |translate}}</option>
+                                <option value="{{each_ward.ward}}" *ngFor="let each_ward of lstWard">{{each_ward.ward}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="divider divider-info my-5"></div>
+            
+                <div>
+                    <h1 class="text-black text-2xl mb-2 dark:text-white">{{'cart.titleInformation' | translate}} :</h1>
+                    <div class="flex mb-2 flex-col w-full lg:justify-between lg:flex-row">
+                        <input type="text" [placeholder]="'cart.titleFullName'|translate" class="w-full mb-2 input bg-white outline lg:w-5/12 lg:mb-0" formControlName="fullNameBuyer" (change)="inputFullName()">
+                        <input type="tel" [placeholder]="'cart.titleTelephoneNumber'|translate" class="w-full input bg-white outline lg:w-5/12" formControlName="telBuyer" (change)="inputTel()">
+                    </div>
+                    <textarea [placeholder]="'cart.titleNote'|translate" class="w-full textarea bg-white outline" formControlName="noteBuyer" (change)="inputNote()"></textarea>
+                </div>
+            
+                <div class="divider my-5 text-black dark:text-white dark:divider-primary">{{'cart.titleTotal'|translate}}</div>
+            
+                <div class="flex flex-col lg:flex-row lg:justify-between">
+                    <div class="w-full flex flex-col lg:w-1/3">
+                        <div class="w-full mb-5 flex justify-between lg:mb-0">
+                            <p class="text-black dark:text-white">{{'cart.titleTotalCostProduct' | translate}}</p>
+                            <p class="text-black dark:text-white">{{totalCostProductInCart | number : '1.0-0'}} vnđ</p>
+                        </div>
+                        <div class="w-full flex justify-between">
+                            <p class="text-black dark:text-white">{{'cart.titleShippingFee'| translate}}</p>
+                            <p class="text-black dark:text-white">{{shippingFee | number : '1.0-0'}} vnđ</p>
+                        </div>
+                        <div class="divider dark:divider-primary my-2"></div>
+                        <div class="w-full flex justify-between">
+                            <p class="text-black dark:text-white">{{'cart.titleTotalCost'|translate}}</p>
+                            <p class="text-black dark:text-white">{{totalCostProductInCart + shippingFee | number : '1.0-0'}} vnđ</p>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-success text-white" [value]="'cart.titleOrder'|translate">
+                </div>
+            </form>
+            
+            
+        </div>
+        <div *ngIf="arrProductInCart.length == 0">
+            <p>{{'cart.titleNotFoundAnyProduct' | translate}}</p>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

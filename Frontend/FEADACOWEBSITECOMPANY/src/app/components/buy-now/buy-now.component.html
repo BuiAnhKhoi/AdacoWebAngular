@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div class="w-4/5 mx-auto my-5">
+    <div class="mb-10">
+        <h1 class="text-2xl font-bold text-black">Choose division</h1>
+        <div class="divider"></div>
+        <div class="flex flex-col lg:justify-between lg:flex-row">
+            <select class="select select-bordered w-full bg-white text-black mb-3 lg:mb-0 lg:w-1/4" (change)="loadDistrict($event)">
+                <option disabled selected>Choose Province/ City</option>
+                <option value="{{each_province.division_province}}" *ngFor="let each_province of arrProvince">{{each_province.division_province}}</option>
+            </select>
+            <select class="select select-bordered w-full bg-white text-black mb-3 lg:mb-0 lg:w-1/4" (change)="loadWard($event)">
+                <option disabled selected>Choose District</option>
+                <option *ngFor="let each_district of arrDistrict" value="{{each_district.district}}">{{each_district.district}}</option>
+            </select>
+            <select class="select select-bordered w-full bg-white text-black lg:w-1/4" (change)="chooseWard($event)">
+                <option disabled selected>Choose Ward</option>
+                <option *ngFor="let each_ward of arrWard" value="{{each_ward.ward}}">{{each_ward.ward}}</option>
+            </select>
+        </div>   
+    </div>
+    <form [formGroup]="buyNowForm" (ngSubmit)="onSubmitBuyNow()">
+    <div class="mb-10">
+        <h1 class="text-2xl font-bold text-black">Input information</h1>
+        <div class="divider"></div>
+        <div class="flex flex-col justify-between mb-2 w-full lg:flex-row">
+            <input type="text" placeholder="Full name" class="input input-bordered lg:w-2/5 w-full mb-2 bg-white text-black" formControlName="fullNameBuyer">
+            <input type="tel" placeholder="Telephone number" class="input input-bordered lg:w-2/5 w-full bg-white text-black" formControlName="telBuyer">
+        </div>
+        <textarea class="textarea textarea-bordered w-full bg-white text-black" placeholder="Note" formControlName="noteBuyer"></textarea>
+    </div>
+    <div class="stats stats-vertical lg:stats-horizontal w-full mb-10 bg-white">
+        <div class="stat">
+            <div class="stat-title text-black">Image Product</div>    
+            <div class="stat-value">
+                <img class="w-16" src="{{imgLinkProduct}}" alt="img_product">
+            </div>
+        </div>
+        <div class="stat">
+            <div class="stat-title text-black">Product Name</div>
+            <div class="stat-value text-xl text-black">{{nameProduct}}</div>
+        </div>
+        <div class="stat">
+            <div class="stat-title text-black">Cost</div>
+            <div class="stat-value text-xl text-black">{{priceProduct|number : '1.0-0'}} vnđ</div>
+            <div class="stat-value text-xl text-black">{{shippingFee |number : '1.0-0'}} vnđ</div>
+        </div>
+        <div class="stat">
+            <div class="stat-title text-black">Quantity</div>
+            <div class="stat-value text-xl text-black">{{quantityProduct}}</div>
+        </div>
+    </div>
+    <div class="mb-10 divider text-black">Total Cost</div>
+    <div class="flex flex-col md:justify-between md:flex-row">
+        <div>
+            <p class="text-3xl text-black">Total cost : </p><span class="font-bold text-black">{{ (priceProduct * quantityProduct) + shippingFee | number :'1.0-0'}} vnđ</span>
+        </div>
+        <input type="submit" class="btn bg-orange-300 text-white border-none" value="Order">
+    </div></form>
+</div>
+
+<div *ngIf="orderBuyNowStatus == true">
+    <div class="toast toast-top toast-center">
+        <div class="alert alert-success">
+            <button (click)="orderBuyNowStatus=false" class="text-black">X</button>
+            <span class="text-white">Order Successful. You order code is : {{codeOrderBuyNow}}</span>
+            <!--  : update code in the future, add send gmail bill -->
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
